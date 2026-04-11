@@ -294,3 +294,55 @@ body.add-edit-page button.btn-secondary:hover {
   background: #555;
   transform: translateY(-2px);
 }
+/* ===== COMMON STYLES ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+button, .btn {
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* ===== LOGIN PAGE ===== */
+body.login-page {
+  background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===== DASHBOARD PAGE ===== */
+body.dashboard-page {
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  padding: 30px 40px;
+}
+
+/* ===== STUDENTS PAGE ===== */
+body.students-page {
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  padding: 30px 20px;
+}
+
+/* ===== ADD/EDIT STUDENT PAGE ===== */
+body.add-edit-page {
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  padding: 50px 20px;
+}
+.bg-glass {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}

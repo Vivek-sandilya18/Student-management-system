@@ -27,7 +27,7 @@
                 <h3 class="text-center mb-3">Edit Student Details</h3>
 
                 <!-- FORM -->
-                <form th:action="@{/saveStudent}" th:object="${student}" method="post">
+                 <form th:action="@{/sendOtp}" method="post" th:object="${student}">
 
                     <!-- Hidden ID -->
                     <input type="hidden" th:field="*{id}" />
@@ -51,6 +51,14 @@
                         <label>Fees</label>
                         <input type="number" th:field="*{fees}" class="form-control" required>
                     </div>
+					<div class="mb-3">
+					    <label class="form-label">Phone</label>
+						<input type="text" th:field="*{phone}" 
+						       class="form-control" 
+						       pattern="[0-9]{10}" 
+						       maxlength="10" 
+						       required>
+					</div>
 
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Update Student</button>

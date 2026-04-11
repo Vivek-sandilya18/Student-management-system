@@ -16,6 +16,14 @@ public class Student {
     private String email;
     private String course;
     private int fees;
+    private String phone; 
+    
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public Long getId() {
 		return id;
 	}

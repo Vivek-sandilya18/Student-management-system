@@ -14,18 +14,18 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
-            // CSRF disable (forms easily kaam kare)
+            
             .csrf(csrf -> csrf.disable())
 
-            // Abhi sab pages open rakho (testing mode)
+           
             .authorizeHttpRequests(auth -> auth
                 .anyRequest().permitAll()
             )
 
-            // Form login completely disable
+           
             .formLogin(form -> form.disable())
 
-            // Logout bhi disable
+           
             .logout(logout -> logout.disable());
 
         return http.build();
