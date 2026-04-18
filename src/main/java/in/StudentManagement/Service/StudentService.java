@@ -21,13 +21,31 @@ public class StudentService {
 
     private List<Student> recentlyDeleted = new ArrayList<>();
 
-    // 🔥 Duplicate check method
+    
     public boolean isDuplicate(Student student) {
-        return repo.existsByEmail(student.getEmail()) ||
-               repo.existsByPhone(student.getPhone());
+
+        Student emailStudent = repo.findByEmail(student.getEmail());
+        Student phoneStudent = repo.findByPhone(student.getPhone());
+
+    
+        if (emailStudent != null) {
+            if (student.getId() == null ||
+                !emailStudent.getId().equals(student.getId())) {
+                return true;
+            }
+        }
+
+     
+        if (phoneStudent != null) {
+            if (student.getId() == null ||
+                !phoneStudent.getId().equals(student.getId())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
-    // 🔍 Search
     public List<Student> searchStudents(String keyword) {
         if (keyword != null && !keyword.isEmpty()) {
             return repo.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCaseOrCourseContainingIgnoreCase(
@@ -37,12 +55,10 @@ public class StudentService {
         }
     }
 
-    // 📄 Pagination
     public Page<Student> getStudentsPaginated(int page, int size) {
         return repo.findAll(PageRequest.of(page, size));
     }
 
-    // 🔍 Search + Pagination
     public Page<Student> searchStudentsPaginated(String keyword, int page, int size) {
 
         Pageable pageable = PageRequest.of(page, size);
@@ -56,17 +72,14 @@ public class StudentService {
         }
     }
 
-    // 💾 Save
     public void saveStudent(Student student) {
         repo.save(student);
     }
 
-    // 🔎 Get by ID
     public Student getStudentById(Long id) {
         return repo.findById(id).orElse(null);
     }
 
-    // 🗑️ Delete + Recently Deleted List
     public void deleteStudent(Long id) {
         Student s = repo.findById(id).orElse(null);
 
@@ -81,12 +94,10 @@ public class StudentService {
         }
     }
 
-    // 📌 Recently Deleted
     public List<Student> getRecentlyDeleted() {
         return recentlyDeleted;
     }
 
-    // 📊 Stats
     public long getTotalStudents() {
         return repo.count();
     }
