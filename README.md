@@ -7,9 +7,8 @@ A Student Management System built using Java, Spring Boot, and MySQL. The applic
 * Student Registration
 * Student Login
 * OTP Verification
-* Add Student Records
 * View Student Details
-* Get Student By ID
+* Get Student By Name
 * Live Search Students By Name
 * Update Student Information
 * Delete Student Records
