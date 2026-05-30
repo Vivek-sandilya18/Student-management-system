@@ -1,77 +1,139 @@
 # 🎓 Student Management System
 
-A full-featured Student Management System built using Java, Spring Boot, and MySQL. The application enables efficient management of student records with authentication, OTP verification, and CRUD operations through RESTful APIs.
+A Student Management System built using Java, Spring Boot, and MySQL. The application provides student registration, login, OTP verification, live search functionality, and complete student record management through RESTful APIs.
 
-## 🚀 Features
+## ✨ Features
 
-- Student Registration
-- Secure Login System
-- OTP Verification
-- Add New Students
-- Update Student Details
-- Delete Student Records
-- View Student Information
-- Database Integration with MySQL
-- RESTful API Architecture
+* Student Registration
+* Student Login
+* OTP Verification
+* Add Student Records
+* View Student Details
+* Get Student By ID
+* Live Search Students By Name
+* Update Student Information
+* Delete Student Records
+* RESTful APIs
+* MySQL Database Integration
 
 ## 🛠️ Tech Stack
 
-- Java
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- Maven
-- REST APIs
-- Git & GitHub
+* Java
+* Spring Boot
+* Spring Data JPA
+* Hibernate
+* MySQL
+* Maven
+* Lombok
 
-## 📁 Project Structure
+## 📂 Project Structure
 
+```text
 src/main/java
-├── Controller
-├── Service
-├── Repository
-├── Entity
-├── Config
+│
+├── controller
+├── service
+├── repository
+├── entity
+├── config
 └── StudentManagementSystemApplication
+```
 
-## 🏗️ Architecture
+## 🔐 Authentication APIs
 
-Controller → Service → Repository → MySQL Database
+### Register Student
 
-## 📌 Key Functionalities
+POST /auth/register
 
-### Authentication Module
-- Student Registration
-- Login Authentication
-- OTP Verification
+### Login Student
 
-### Student Management Module
-- Create Student Records
-- Read Student Details
-- Update Student Information
-- Delete Student Records
+POST /auth/login
+
+### Verify OTP
+
+POST /auth/verify-otp
+
+## 👨‍🎓 Student Management APIs
+
+### Get All Students
+
+GET /students
+
+### Search Student By Name
+
+GET /students/search?name={studentName}
+
+### Add Student
+
+POST /students
+
+### Update Student
+
+PUT /students/{id}
+
+### Delete Student
+
+DELETE /students/{id}
+
+## 🧠 Concepts Implemented
+
+* Layered Architecture
+* REST API Development
+* CRUD Operations
+* Live Search Functionality
+* OTP Verification Workflow
+* Database Integration using JPA/Hibernate
+* Clean Code Structure
+
+## ⚡ Getting Started
+
+### Clone Repository
+
+```bash
+git clone https://github.com/your-username/student-management-system.git
+```
+
+### Configure Database
+
+Update application.properties
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/student_db
+spring.datasource.username=root
+spring.datasource.password=your_password
+```
+
+### Run Project
+
+```bash
+mvn spring-boot:run
+```
 
 ## 🎯 Learning Outcomes
 
-- Backend Development using Spring Boot
-- REST API Design & Development
-- Database Integration with JPA/Hibernate
-- Layered Architecture Implementation
-- OTP-based Authentication
-- CRUD Operations
-- Exception Handling
+* Spring Boot Application Development
+* REST API Design & Development
+* Database Management using MySQL
+* OTP Verification Implementation
+* Backend Development Fundamentals
+* JPA/Hibernate Integration
+* Layered Architecture Design
 
 ## 🔮 Future Enhancements
 
-- JWT Authentication
-- Spring Security
-- Swagger Documentation
-- Role-Based Access Control
-- Docker Deployment
-- Cloud Hosting
+* Spring Security Integration
+* JWT Authentication
+* Swagger API Documentation
+* Role-Based Access Control
+* Docker Deployment
+* Cloud Hosting
 
 ## 👨‍💻 Author
 
-Vivek Sharma
+**Vivek Sharma**
 
 Aspiring Software Engineer | Java Developer | Spring Boot | MySQL | MongoDB
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
